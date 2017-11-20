@@ -20,6 +20,7 @@ export class PreferencesService {
 		this.convertPreferencesToAngular2();
 	}
 
+	// Comment
 	public putPreference(key: string, value: any): void {
 		let inMemoryPreferences: any;
 		if (this.sessionService.getPreference('isPreferencesInMemory') || false) {
