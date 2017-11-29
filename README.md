@@ -27,6 +27,12 @@ Additionaly for the PreferencesService, you can use this two methods to get/put 
 public getInCompressFormat(): any
 public putFromCompressFormat(compressed: any)
 ```
+
+Finally, for the SessionStorageService and LocalStorageService you are able to setup a prefix for the keys that you will store. If not set, Systelab will be use as a default. Remember that a dot (.) will be added after the prefix. To setup the prefix use:
+
+```javascript
+usePrefix(prefix: string) 
+```
  
 ## Working with the repo
 
