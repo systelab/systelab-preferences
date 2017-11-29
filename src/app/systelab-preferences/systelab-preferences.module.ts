@@ -1,20 +1,15 @@
 import { NgModule, Type, ModuleWithProviders } from '@angular/core';
 import { PreferencesService } from './preferences.service';
-import { SessionService } from './session.service';
+import { SessionStorageService } from './session-storage.service';
 import { WebStorageService, WebStorageConfig } from '@ng2plus/web-storage';
-
-const webStorageConfig = {
-	prefix: 'Modulab'
-};
+import { LocalStorageService } from './local-storage.service';
 
 export function getWebStorageService(): WebStorageService {
-
 	const wsc: WebStorageConfig = {
-		prefix: 'Modulab'
+		prefix: 'Systelab'
 	};
 	const wss: WebStorageService = new WebStorageService(wsc);
 	return wss;
-
 }
 
 @NgModule({})
@@ -24,10 +19,10 @@ export class SystelabPreferencesModule {
 			ngModule:  SystelabPreferencesModule,
 			providers: [
 				{provide: PreferencesService, useClass: PreferencesService},
-				{provide: SessionService, useClass: SessionService},
-				{provide: WebStorageService, useFactory: getWebStorageService},
-				// {provide: WEB_STORAGE_SERVICE_CONFIG, useFactory: getWebStorageConfig}
-			]
+				{provide: SessionStorageService, useClass: SessionStorageService},
+				{provide: LocalStorageService, useClass: LocalStorageService},
+				{provide: WebStorageService, useFactory: getWebStorageService}
+				]
 		};
 	}
 }
