@@ -8,6 +8,10 @@ export class PreferencesService {
 
 	private preferences = new Map<string, Object>();
 
+	public clear() {
+		this.preferences.clear();
+	}
+
 	public put(key: string, value: any): void {
 		this.preferences.set(key, value);
 	}

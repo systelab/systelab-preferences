@@ -1,7 +1,7 @@
 {
   "name": "systelab-preferences",
   "homepage": "https://github.com/systelab/systelab-preferences.git",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "MIT",
   "keywords": [
     "Angular",
@@ -45,8 +45,7 @@
     "core-js": "^2.4.1",
     "rxjs": "^5.4.1",
     "zone.js": "^0.8.14",
-    "pako": "^1.0.4",
-    "@ng2plus/web-storage": "^1.1.2"
+    "pako": "^1.0.4"
   },
   "peerDependencies": {
     "@angular/core": "^2.3.1 || >=4.0.0"

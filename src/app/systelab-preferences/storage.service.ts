@@ -1,27 +1,25 @@
-import { WebStorageService } from '@ng2plus/web-storage';
-
-export abstract class StorageService {
+export class StorageService {
 
 	protected prefix = 'Systelab';
 
-	constructor(private webStorageService: WebStorageService) {
-		this.webStorageService.setup(this.getWebStorageConfig());
+	constructor(private storage: Storage) {
 	}
-
-	public abstract getWebStorageConfig(): any;
 
 	public usePrefix(prefix: string) {
 		this.prefix = prefix;
 	}
 
+	public clear() {
+		this.storage.clear();
+	}
+
 	public put(key: string, value: any): void {
-		this.webStorageService.setup(this.getWebStorageConfig())
-			.set(key, value);
+		this.storage.setItem(this.prefix + '.' + key, JSON.stringify(value))
 	}
 
 	public get(key: string): any {
-		const value = this.webStorageService.setup(this.getWebStorageConfig())
-			.get(key);
+
+		const value = this.parse(this.storage.getItem(this.prefix + '.' + key) || 'null') || null;
 		if (value) {
 			return value;
 		} else {
@@ -30,17 +28,24 @@ export abstract class StorageService {
 	}
 
 	public remove(key: string): void {
-		this.webStorageService.setup(this.getWebStorageConfig())
-			.remove(key);
+		this.storage.removeItem(this.prefix + '.' + key);
 	}
 
 	public removeStartsWith(startWith: string): void {
-		const keys: string[] = this.webStorageService.keys();
-
-		keys.forEach(function(currentKey: string) {
-			if (currentKey.startsWith(startWith) && typeof this.webStorageService.get(currentKey) !== 'function') {
+		for (let i = this.storage.length - 1; i >= 0; i--) {
+			let currentKey = this.storage.key(i);
+			currentKey = currentKey.slice(this.prefix.length + 1);
+			if (currentKey.startsWith(startWith)) {
 				this.remove(currentKey);
 			}
-		}, this);
+		}
+	}
+
+	private parse(text: string) {
+		try {
+			return JSON.parse(text) || null;
+		} catch (e) {
+			return text;
+		}
 	}
 }

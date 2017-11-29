@@ -1,14 +1,10 @@
 import { SessionStorageService } from '../app/systelab-preferences/session-storage.service';
-import { WebStorageConfig, WebStorageService } from '@ng2plus/web-storage';
 
 describe('Session Storage Service without the TestBed', () => {
 	let service: SessionStorageService;
 
 	beforeEach(() => {
-		const wsc: WebStorageConfig = {
-			prefix: 'Systelab'
-		};
-		service = new SessionStorageService(new WebStorageService(wsc));
+		service = new SessionStorageService();
 	});
 
 	it('Check that we can put and get preferences', () => {

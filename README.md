@@ -14,13 +14,14 @@ In order to use this library you must import the module SystelabPreferencesModul
 After injecting a PreferencesService or a SessionStorageService or a LocalStorageService instance in your classes, you can work with the preferences by calling the following methods:
 
 ```javascript
+public clear()
 public put(key: string, value: any): void
 public get(key: string): any
 public remove(key: string): void
 public removeStartsWith(startWith: string): void
 ```
 
-Additionaly for the PreferencesService, you can use this two methods to get/set all the preferences in a compress format in order to store them in your backend.
+Additionaly for the PreferencesService, you can use this two methods to get/put all the preferences in a compress format in order to store them in your backend.
 
 ```javascript
 public getInCompressFormat(): any
