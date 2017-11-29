@@ -8,6 +8,11 @@ Library with Systelab Preferences tools to speed up our Angular developments
 npm install systelab-preferences --save
 ```
 
+## Local, Session or Preferences
+For SessionStorage, changes are only available per window (or tab in browsers like Chrome and Firefox). Changes made are saved and available for the current page, as well as future visits to the site on the same window. Once the window is closed, the storage is deleted.
+Data stored in LocalStorage persists until explicitly deleted. Changes made are saved and available for all current and future visits to the site.
+On the other side, Preferences are only available inside your application.
+
 ## How to use the library
 In order to use this library you must import the module SystelabPreferencesModule. Remember to import SystelabPreferencesModule.forRoot() in your application module.
 
