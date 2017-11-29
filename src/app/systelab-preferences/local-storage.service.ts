@@ -11,7 +11,7 @@ export class LocalStorageService extends StorageService {
 
 	public getWebStorageConfig() {
 		return {
-			prefix:   this.prefix;
+			prefix:   this.prefix,
 			provider: 'localStorage'
 		};
 	}
