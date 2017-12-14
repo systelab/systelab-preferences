@@ -21,9 +21,7 @@
     "cleardown": "rimraf build lib",
     "inline-build-templates": "gulp inline-build-templates",
     "ngc-build": "ngc -p ./tsconfig.lib.json",
-    "prepare": "npm run cleardown && npm run inline-build-templates && npm run ngc-build",
-    "preversion": "npm test",
-    "postversion": "git push && git push --tags && rm -rf build && rm -rf lib"
+    "prepare": "npm run cleardown && npm run inline-build-templates && npm run ngc-build"
   },
   "files": [
     "lib"
