@@ -1,6 +1,6 @@
 # systelab-preferences
 
-Library with Systelab Preferences tools to speed up our Angular developments
+Library with Systelab Preferences tools.
 
 ## Installing the library
 
