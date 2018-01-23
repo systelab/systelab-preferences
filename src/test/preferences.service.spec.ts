@@ -34,6 +34,20 @@ describe('Preferences Service without the TestBed', () => {
 			.toBe('Hello again!');
 	});
 
+	it('Check that we can delete preferences ending with a suffix', () => {
+		service.put('PrefOne', 'Hello!');
+		service.put('PrefTwentyOne', 'Bye!');
+		service.put('NewPref', 'Hello again!');
+
+		service.removeEndsWith('One');
+		expect(service.get('PrefOne'))
+			.toBe(undefined);
+		expect(service.get('PrefTwentyOne'))
+			.toBe(undefined);
+		expect(service.get('NewPref'))
+			.toBe('Hello again!');
+	});
+
 	it('Check that save and restore', () => {
 		service.put('Pref1', 'Hello!');
 		service.put('Pref2', 'Bye!');

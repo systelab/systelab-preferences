@@ -32,6 +32,14 @@ export class PreferencesService {
 		});
 	}
 
+	public removeEndsWith(endsWith: string): void {
+		this.preferences.forEach((value: Object, key: string) => {
+			if (key.endsWith(endsWith)) {
+				this.remove(key);
+			}
+		});
+	}
+
 	public getInCompressFormat(): any {
 		const passToServer: any = {};
 		this.preferences.forEach((value: Object, key: string) => {

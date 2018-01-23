@@ -26,6 +26,7 @@ public put(key: string, value: any): void
 public get(key: string): any
 public remove(key: string): void
 public removeStartsWith(startWith: string): void
+public removeEndsWith(endsWith: string): void
 ```
 
 Additionaly for the PreferencesService, you can use this two methods to get/put all the preferences in a compress format in order to store them in your backend.
