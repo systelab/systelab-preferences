@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { SystelabPreferencesModule } from './systelab-preferences/systelab-preferences.module';
-import { PreferencesService } from './systelab-preferences/preferences.service';
+import { MemoryStorageService } from './systelab-preferences/memory-storage.service';
 import { LocalStorageService } from './systelab-preferences/local-storage.service';
 import { SessionStorageService } from './systelab-preferences/session-storage.service';
 
@@ -16,7 +16,7 @@ import { SessionStorageService } from './systelab-preferences/session-storage.se
 		FormsModule,
 		SystelabPreferencesModule.forRoot()
 	],
-	providers:    [PreferencesService,
+	providers:    [MemoryStorageService,
 		LocalStorageService,
 		SessionStorageService],
 	bootstrap:    [AppComponent]

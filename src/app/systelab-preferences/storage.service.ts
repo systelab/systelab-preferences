@@ -41,6 +41,17 @@ export class StorageService {
 		}
 	}
 
+	public removeEndsWith(endsWith: string): void {
+		for (let i = this.storage.length - 1; i >= 0; i--) {
+			let currentKey = this.storage.key(i);
+			currentKey = currentKey.slice(this.prefix.length + 1);
+			if (currentKey.endsWith(endsWith)) {
+				this.remove(currentKey);
+			}
+		}
+	}
+
+
 	private parse(text: string) {
 		try {
 			return JSON.parse(text) || null;

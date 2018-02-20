@@ -1,5 +1,5 @@
 import { NgModule, Type, ModuleWithProviders } from '@angular/core';
-import { PreferencesService } from './preferences.service';
+import { MemoryStorageService } from './memory-storage.service';
 import { SessionStorageService } from './session-storage.service';
 import { LocalStorageService } from './local-storage.service';
 
@@ -9,7 +9,7 @@ export class SystelabPreferencesModule {
 		return {
 			ngModule:  SystelabPreferencesModule,
 			providers: [
-				{provide: PreferencesService, useClass: PreferencesService},
+				{provide: MemoryStorageService, useClass: MemoryStorageService},
 				{provide: SessionStorageService, useClass: SessionStorageService},
 				{provide: LocalStorageService, useClass: LocalStorageService}
 				]

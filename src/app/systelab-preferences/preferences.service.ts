@@ -1,64 +1,113 @@
 import { Injectable } from '@angular/core';
-
-declare var pako: any;
-let compressor: any = pako;
+import { MemoryStorageService } from './memory-storage.service';
+import { SessionStorageService } from './session-storage.service';
+import { LocalStorageService } from './local-storage.service';
 
 @Injectable()
 export class PreferencesService {
 
-	private preferences = new Map<string, Object>();
+	public static IN_MEMORY_STORAGE = 1;
+	public static LOCAL_STORAGE = 2;
+	public static SESSION_STORAGE = 3;
+
+	private storage = PreferencesService.IN_MEMORY_STORAGE;
+
+	public constructor(public memoryService: MemoryStorageService, public localService: LocalStorageService, public sessionService: SessionStorageService) {
+	}
+
+	public setStorage(storage: number) {
+		if (storage === PreferencesService.IN_MEMORY_STORAGE || storage === PreferencesService.LOCAL_STORAGE || storage === PreferencesService.SESSION_STORAGE) {
+			this.storage = storage;
+		} else {
+			console.error('Invalid storage type')
+		}
+	}
+
+	public getStorage(): number {
+		return this.storage;
+	}
+
+	public usePrefix(prefix: string) {
+		if (this.storage === PreferencesService.LOCAL_STORAGE) {
+			this.localService.usePrefix(prefix);
+		} else if (this.storage === PreferencesService.SESSION_STORAGE) {
+			this.sessionService.usePrefix(prefix);
+		} else {
+			console.error('You can not set a prefix for In-memory preferences')
+		}
+	}
 
 	public clear() {
-		this.preferences.clear();
+		if (this.storage === PreferencesService.IN_MEMORY_STORAGE) {
+			this.memoryService.clear();
+		} else if (this.storage === PreferencesService.LOCAL_STORAGE) {
+			this.localService.clear();
+		} else {
+			this.sessionService.clear();
+		}
 	}
 
 	public put(key: string, value: any): void {
-		this.preferences.set(key, value);
+		if (this.storage === PreferencesService.IN_MEMORY_STORAGE) {
+			this.memoryService.put(key, value);
+		} else if (this.storage === PreferencesService.LOCAL_STORAGE) {
+			this.localService.put(key, value);
+		} else {
+			this.sessionService.put(key, value);
+		}
 	}
 
 	public get(key: string): any {
-		return this.preferences.get(key);
+		if (this.storage === PreferencesService.IN_MEMORY_STORAGE) {
+			return this.memoryService.get(key);
+		} else if (this.storage === PreferencesService.LOCAL_STORAGE) {
+			return this.localService.get(key);
+		} else {
+			return this.sessionService.get(key);
+		}
 	}
 
 	public remove(key: string): void {
-		this.preferences.delete(key);
+		if (this.storage === PreferencesService.IN_MEMORY_STORAGE) {
+			this.memoryService.remove(key);
+		} else if (this.storage === PreferencesService.LOCAL_STORAGE) {
+			this.localService.remove(key);
+		} else {
+			this.sessionService.remove(key);
+		}
 	}
 
 	public removeStartsWith(startWith: string): void {
-		this.preferences.forEach((value: Object, key: string) => {
-			if (key.startsWith(startWith)) {
-				this.remove(key);
-			}
-		});
+		if (this.storage === PreferencesService.IN_MEMORY_STORAGE) {
+			this.memoryService.removeStartsWith(startWith);
+		} else if (this.storage === PreferencesService.LOCAL_STORAGE) {
+			this.localService.removeStartsWith(startWith);
+		} else {
+			this.sessionService.removeStartsWith(startWith);
+		}
 	}
 
 	public removeEndsWith(endsWith: string): void {
-		this.preferences.forEach((value: Object, key: string) => {
-			if (key.endsWith(endsWith)) {
-				this.remove(key);
-			}
-		});
+		if (this.storage === PreferencesService.IN_MEMORY_STORAGE) {
+			this.memoryService.removeEndsWith(endsWith);
+		} else if (this.storage === PreferencesService.LOCAL_STORAGE) {
+			this.localService.removeEndsWith(endsWith);
+		} else {
+			this.sessionService.removeEndsWith(endsWith);
+		}
 	}
 
 	public getInCompressFormat(): any {
-		const passToServer: any = {};
-		this.preferences.forEach((value: Object, key: string) => {
-			passToServer[key] = value;
-		});
-
-		const binaryString = compressor.deflate(JSON.stringify(passToServer), {to: 'string'});
-		return btoa(binaryString);
+		if (this.storage === PreferencesService.IN_MEMORY_STORAGE) {
+			return this.memoryService.getInCompressFormat();
+		} else {
+			return '';
+		}
 	}
 
 	public putFromCompressFormat(compressed: any) {
-		// Do your best
-		try {
-			const result = compressor.inflate(atob(compressed), {to: 'string'});
-			const parsed = JSON.parse(result, (k, v) => {
-				this.preferences.set(k, v);
-				return v;
-			});
-		} catch (ex) {
+		if (this.storage === PreferencesService.IN_MEMORY_STORAGE) {
+			this.memoryService.putFromCompressFormat(compressed);
 		}
 	}
 }

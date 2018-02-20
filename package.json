@@ -1,7 +1,7 @@
 {
   "name": "systelab-preferences",
   "homepage": "https://github.com/systelab/systelab-preferences.git",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "license": "MIT",
   "keywords": [
     "Angular",
@@ -21,7 +21,7 @@
     "cleardown": "rimraf build lib",
     "inline-build-templates": "gulp inline-build-templates",
     "ngc-build": "ngc -p ./tsconfig.lib.json",
-    "prepare": "npm run cleardown && npm run inline-build-templates && npm run ngc-build"
+    "prepublish": "npm run cleardown && npm run inline-build-templates && npm run ngc-build"
   },
   "files": [
     "lib"
