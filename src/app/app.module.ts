@@ -6,6 +6,7 @@ import { SystelabPreferencesModule } from './systelab-preferences/systelab-prefe
 import { MemoryStorageService } from './systelab-preferences/memory-storage.service';
 import { LocalStorageService } from './systelab-preferences/local-storage.service';
 import { SessionStorageService } from './systelab-preferences/session-storage.service';
+import { PreferencesService } from './systelab-preferences/preferences.service';
 
 @NgModule({
 	declarations: [
@@ -18,7 +19,8 @@ import { SessionStorageService } from './systelab-preferences/session-storage.se
 	],
 	providers:    [MemoryStorageService,
 		LocalStorageService,
-		SessionStorageService],
+		SessionStorageService,
+		PreferencesService],
 	bootstrap:    [AppComponent]
 })
 export class AppModule {
