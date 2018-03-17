@@ -2,7 +2,8 @@ sudo: required
 dist: trusty
 language: node_js
 node_js:
-  - '4.2'
+  - "iojs"
+  - "7"
 
 addons:
 apt:
