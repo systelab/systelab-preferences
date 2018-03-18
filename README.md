@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/83129b70f2e6402ea33d4b43e4c207ae)](https://app.codacy.com/app/alfonsserra/systelab-preferences?utm_source=github.com&utm_medium=referral&utm_content=systelab/systelab-preferences&utm_campaign=badger)
 [![Build Status](https://travis-ci.org/systelab/systelab-preferences.svg?branch=master)](https://travis-ci.org/systelab/systelab-preferences)
 
 # systelab-preferences
