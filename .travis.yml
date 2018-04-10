@@ -19,6 +19,7 @@ before_install:
 
 before_script:
   - npm install -g codecov
+  - npm install -g codacy-coverage
   - npm install
   - ng build
 
@@ -26,5 +27,5 @@ script:
   - ng test --single-run --code-coverage
 
 after_success:
-  - cat coverage/lcov.info | codecov -t c4f50c94-00fa-4d80-9d37-dcffc8c9ff1e
-
+  - cat coverage/lcov.info | codecov
+  - cat ./coverage/lcov.info | codacy-coverage
