@@ -2,6 +2,7 @@
 [![Build Status](https://travis-ci.org/systelab/systelab-preferences.svg?branch=master)](https://travis-ci.org/systelab/systelab-preferences)
 [![codecov](https://codecov.io/gh/systelab/systelab-preferences/branch/master/graph/badge.svg)](https://codecov.io/gh/systelab/systelab-preferences)
 [![npm version](https://badge.fury.io/js/systelab-preferences.svg)](https://badge.fury.io/js/systelab-preferences)
+[![Known Vulnerabilities](https://snyk.io/test/github/systelab/systelab-preferences/badge.svg?targetFile=package.json)](https://snyk.io/test/github/systelab/systelab-preferences?targetFile=package.json)
 
 # systelab-preferences
 
