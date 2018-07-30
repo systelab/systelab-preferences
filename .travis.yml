@@ -25,7 +25,7 @@ before_script:
   - ng build
 
 script:
-  - ng test --single-run --code-coverage
+  - ng test --watch=false --code-coverage
 
 after_success:
   - cat coverage/lcov.info | codecov
