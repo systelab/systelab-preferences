@@ -37,14 +37,14 @@ public removeStartsWith(startWith: string): void
 public removeEndsWith(endsWith: string): void
 ```
 
-Additionaly for the MemoryStorageService, you can use this two methods to get/put all the preferences in a compress format in order to store them in your backend.
+Additionaly for the MemoryStorageService, you can use these two methods to get/put all the preferences in a compress format in order to store them in your backend.
 
 ```javascript
 public getInCompressFormat(): any
 public putFromCompressFormat(compressed: any)
 ```
 
-Finally, for the SessionStorageService and LocalStorageService you are able to setup a prefix for the keys that you will store. If not set, Systelab will be use as a default. Remember that a dot (.) will be added after the prefix. To setup the prefix use:
+Finally, for the SessionStorageService and LocalStorageService you are able to setup a prefix for the keys that you will store. If not set, Systelab will be used as a default. Remember that a dot (.) will be added after the prefix. To setup the prefix use:
 
 ```javascript
 usePrefix(prefix: string) 
