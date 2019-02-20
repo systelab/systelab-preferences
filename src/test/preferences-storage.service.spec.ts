@@ -31,6 +31,35 @@ describe('Preferences Service without the TestBed', () => {
 		});
 	});
 
+	it('Check that we do not get default value if the preference is present', () => {
+		services.forEach((service) => {
+			service.put('Pref1', 'Something');
+			expect(service.get('Pref1', 'Default'))
+				.toBe('Something');
+		});
+	});
+
+	it('Check that we get default value if the preference is not present', () => {
+		services.forEach((service) => {
+			expect(service.get('Non-existent', 'Default'))
+				.toBe('Default');
+		});
+	});
+
+	it('Check that we get a boolean false default value if the preference is not present', () => {
+		services.forEach((service) => {
+			expect(service.get('Non-existent', false))
+				.toBe(false);
+		});
+	});
+
+	it('Check that we get a boolean true default value if the preference is not present', () => {
+		services.forEach((service) => {
+			expect(service.get('Non-existent', true))
+				.toBe(true);
+		});
+	});
+
 	it('Check that we can delete preferences', () => {
 		services.forEach((service) => {
 			service.put('Pref1', 'Hello!');
