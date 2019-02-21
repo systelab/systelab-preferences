@@ -31,7 +31,7 @@ For SessionStorageService, LocalStorageService and MemoryStorageService use:
 ```javascript
 public clear()
 public put(key: string, value: any): void
-public get(key: string): any
+public get(key: string, defaultValue?:any): any
 public remove(key: string): void
 public removeStartsWith(startWith: string): void
 public removeEndsWith(endsWith: string): void
