@@ -32,6 +32,7 @@ after_success:
   - cat ./coverage/lcov.info | codacy-coverage
   
 deploy:
+  skip_cleanup: true
   provider: npm
   email: aserra@werfen.com
   api_key: $NPM_TOKEN
