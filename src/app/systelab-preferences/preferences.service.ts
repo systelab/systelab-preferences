@@ -3,7 +3,9 @@ import { MemoryStorageService } from './memory-storage.service';
 import { SessionStorageService } from './session-storage.service';
 import { LocalStorageService } from './local-storage.service';
 
-@Injectable()
+@Injectable({
+	providedIn: 'root'
+})
 export class PreferencesService {
 
 	public static IN_MEMORY_STORAGE = 1;

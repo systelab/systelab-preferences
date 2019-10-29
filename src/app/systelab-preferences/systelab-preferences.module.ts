@@ -9,12 +9,7 @@ export class SystelabPreferencesModule {
 	public static forRoot(entryComponents?: Array<Type<any> | any[]>): ModuleWithProviders {
 		return {
 			ngModule:  SystelabPreferencesModule,
-			providers: [
-				{provide: MemoryStorageService, useClass: MemoryStorageService},
-				{provide: SessionStorageService, useClass: SessionStorageService},
-				{provide: LocalStorageService, useClass: LocalStorageService},
-				{provide: PreferencesService, useClass: PreferencesService}
-				]
+			providers: []
 		};
 	}
 }

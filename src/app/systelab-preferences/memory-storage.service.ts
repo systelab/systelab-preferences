@@ -3,7 +3,9 @@ import { Injectable } from '@angular/core';
 declare var pako: any;
 const compressor: any = pako;
 
-@Injectable()
+@Injectable({
+	providedIn: 'root'
+})
 export class MemoryStorageService {
 
 	private preferences = new Map<string, Object>();
