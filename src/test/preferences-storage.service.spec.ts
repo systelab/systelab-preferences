@@ -1,5 +1,5 @@
 import { MemoryStorageService } from '../app/systelab-preferences/memory-storage.service';
-import { PreferencesService } from '../app/systelab-preferences/preferences.service';
+import { PreferencesService, StorageType } from '../app/systelab-preferences/preferences.service';
 import { SessionStorageService } from '../app/systelab-preferences/session-storage.service';
 import { LocalStorageService } from '../app/systelab-preferences/local-storage.service';
 
@@ -11,15 +11,15 @@ describe('Preferences Service without the TestBed', () => {
 		services = [];
 
 		const service = new PreferencesService(new MemoryStorageService(), new LocalStorageService(), new SessionStorageService());
-		service.setStorage(PreferencesService.IN_MEMORY_STORAGE);
+		service.setStorage(StorageType.IN_MEMORY_STORAGE);
 		services.push(service);
 
 		const service2 = new PreferencesService(new MemoryStorageService(), new LocalStorageService(), new SessionStorageService());
-		service2.setStorage(PreferencesService.LOCAL_STORAGE);
+		service2.setStorage(StorageType.LOCAL_STORAGE);
 		services.push(service2);
 
 		const service3 = new PreferencesService(new MemoryStorageService(), new LocalStorageService(), new SessionStorageService());
-		service3.setStorage(PreferencesService.SESSION_STORAGE);
+		service3.setStorage(StorageType.SESSION_STORAGE);
 		services.push(service3);
 	});
 
@@ -110,7 +110,7 @@ describe('Preferences Service without the TestBed', () => {
 			service.removeStartsWith('Pref');
 			service.putFromCompressFormat(compressed);
 
-			if (service.getStorage() === PreferencesService.IN_MEMORY_STORAGE) {
+			if (service.getStorage() === StorageType.IN_MEMORY_STORAGE) {
 				expect(service.get('Pref1'))
 					.toBe('Hello!');
 				expect(service.get('Pref2'))

@@ -1,7 +1,7 @@
 {
   "name": "systelab-preferences",
   "homepage": "https://github.com/systelab/systelab-preferences.git",
-  "version": "5.1.0",
+  "version": "6.0.0",
   "license": "MIT",
   "keywords": [
     "Angular",
@@ -34,27 +34,27 @@
   },
   "dependencies": {
     "pako": "^1.0.6",
-    "tslib": "^1.9.0"
+    "tslib": "^1.10.0"
   },
   "peerDependencies": {},
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.802.0",
-    "@angular/animations": "8.2.0",
-    "@angular/cli": "8.2.0",
-    "@angular/common": "8.2.0",
-    "@angular/compiler": "8.2.0",
-    "@angular/compiler-cli": "8.2.0",
-    "@angular/core": "8.2.0",
-    "@angular/forms": "8.2.0",
-    "@angular/language-service": "8.2.0",
-    "@angular/platform-browser": "8.2.0",
-    "@angular/platform-browser-dynamic": "8.2.0",
-    "@angular/router": "8.2.0",
+    "@angular-devkit/build-angular": "~0.900.1",
+    "@angular/animations": "9.0.0",
+    "@angular/cli": "9.0.1",
+    "@angular/common": "9.0.0",
+    "@angular/compiler": "9.0.0",
+    "@angular/compiler-cli": "9.0.0",
+    "@angular/core": "9.0.0",
+    "@angular/forms": "9.0.0",
+    "@angular/language-service": "9.0.0",
+    "@angular/platform-browser": "9.0.0",
+    "@angular/platform-browser-dynamic": "9.0.0",
+    "@angular/router": "9.0.0",
     "@types/core-js": "^2.5.0",
     "@types/jasmine": "~2.8.9",
     "@types/jasminewd2": "~2.0.5",
-    "@types/node": "~10.12.0",
-    "codelyzer": "^5.0.1",
+    "@types/node": "^12.11.1",
+    "codelyzer": "^5.1.2",
     "core-js": "^2.5.7",
     "gulp": "^3.9.1",
     "gulp-inline-ng2-template": "^5.0.1",
@@ -68,10 +68,10 @@
     "karma-jasmine-html-reporter": "^1.4.2",
     "node-sass": "^4.9.4",
     "rimraf": "^2.6.1",
-    "rxjs": "6.5.2",
+    "rxjs": "6.5.4",
     "ts-node": "~7.0.1",
     "tslint": "~5.11.0",
-    "typescript": "3.5.3",
-    "zone.js": "~0.9.1"
+    "typescript": "3.7.5",
+    "zone.js": "~0.10.2"
   }
 }
