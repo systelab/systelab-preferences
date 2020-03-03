@@ -3,7 +3,9 @@ import { Injectable } from '@angular/core';
 declare var pako: any;
 const compressor: any = pako;
 
-@Injectable()
+@Injectable({
+	providedIn: 'root'
+})
 export class MemoryStorageService {
 
 	private preferences = new Map<string, Object>();
@@ -61,9 +63,7 @@ export class MemoryStorageService {
 
 	public getInStringFormat(): any {
 		const passToServer: any = {};
-		this.preferences.forEach((value: Object, key: string) => {
-			passToServer[key] = value;
-		});
+		this.preferences.forEach((value, key) => passToServer[key] = value);
 		return JSON.stringify(passToServer);
 	}
 
@@ -74,10 +74,7 @@ export class MemoryStorageService {
 			const result = compressor.inflate(atob(compressed), {to: 'string'});
 			const parsed = JSON.parse(result);
 			Object.keys(parsed)
-				.forEach(key => {
-					const value = parsed[key];
-					this.preferences.set(key, value);
-				});
+				.forEach(key => this.preferences.set(key, parsed[key]));
 		} catch (ex) {
 		}
 	}

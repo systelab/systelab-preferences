@@ -20,11 +20,7 @@ export class StorageService {
 	public get(key: string, defaultValue?: any): any {
 
 		const value = this.parse(this.storage.getItem(this.prefix + '.' + key) || 'null') || null;
-		if (value) {
-			return value;
-		} else {
-			return defaultValue;
-		}
+		return value ? value : defaultValue;
 	}
 
 	public remove(key: string): void {
@@ -33,20 +29,16 @@ export class StorageService {
 
 	public removeStartsWith(startWith: string): void {
 		for (let i = this.storage.length - 1; i >= 0; i--) {
-			let currentKey = this.storage.key(i);
-			currentKey = currentKey.slice(this.prefix.length + 1);
-			if (currentKey.startsWith(startWith)) {
-				this.remove(currentKey);
+			if (this.storage.key(i).startsWith(this.prefix + '.' +startWith)) {
+				this.storage.removeItem(this.storage.key(i));
 			}
 		}
 	}
 
 	public removeEndsWith(endsWith: string): void {
 		for (let i = this.storage.length - 1; i >= 0; i--) {
-			let currentKey = this.storage.key(i);
-			currentKey = currentKey.slice(this.prefix.length + 1);
-			if (currentKey.endsWith(endsWith)) {
-				this.remove(currentKey);
+			if (this.storage.key(i).endsWith(endsWith)) {
+				this.storage.removeItem(this.storage.key(i));
 			}
 		}
 	}

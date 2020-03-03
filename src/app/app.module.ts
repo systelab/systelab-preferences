@@ -15,7 +15,7 @@ import { PreferencesService } from './systelab-preferences/preferences.service';
 	imports:      [
 		BrowserModule,
 		FormsModule,
-		SystelabPreferencesModule.forRoot()
+		SystelabPreferencesModule
 	],
 	providers:    [MemoryStorageService,
 		LocalStorageService,
