@@ -3,89 +3,35 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "systelab-preferences-library": {
-      "root": "",
-      "sourceRoot": "src",
-      "projectType": "application",
+    "systelab-preferences": {
+      "projectType": "library",
+      "root": "projects/systelab-preferences",
+      "sourceRoot": "projects/systelab-preferences/src",
+      "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "aot": true,
-            "outputPath": "dist",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "tsConfig": "src/tsconfig.app.json",
-            "polyfills": "src/polyfills.ts",
-            "assets": [
-              "src/favicon.ico"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "tsConfig": "projects/systelab-preferences/tsconfig.lib.json",
+            "project": "projects/systelab-preferences/ng-package.json",
             "scripts": [
               "node_modules/pako/dist/pako.min.js"
             ]
           },
           "configurations": {
             "production": {
-              "budgets": [
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ]
+              "tsConfig": "projects/systelab-preferences/tsconfig.lib.prod.json"
             }
-          }
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "systelab-preferences-library:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "systelab-preferences-library:build:production"
-            }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "systelab-preferences-library:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "karmaConfig": "./karma.conf.js",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
+            "main": "projects/systelab-preferences/src/test.ts",
+            "tsConfig": "projects/systelab-preferences/tsconfig.spec.json",
+            "karmaConfig": "projects/systelab-preferences/karma.conf.js",
             "scripts": [
               "node_modules/pako/dist/pako.min.js"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
-            "assets": [
-              "src/assets",
-              "src/favicon.ico"
             ]
           }
         },
@@ -93,8 +39,8 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
+              "projects/systelab-preferences/tsconfig.lib.json",
+              "projects/systelab-preferences/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -102,21 +48,6 @@
           }
         }
       }
-    },
-    "systelab-preferences-library-e2e": {
-      "root": "",
-      "sourceRoot": "",
-      "projectType": "application"
-    }
-  },
-  "defaultProject": "systelab-preferences-library",
-  "schematics": {
-    "@schematics/angular:component": {
-      "prefix": "app",
-      "styleext": "css"
-    },
-    "@schematics/angular:directive": {
-      "prefix": "app"
-    }
-  }
+    }},
+  "defaultProject": "systelab-preferences"
 }

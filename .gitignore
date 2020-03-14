@@ -3,6 +3,7 @@ node_modules
 coverage
 build
 lib
+dist
 css
 html
 sass
