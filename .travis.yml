@@ -18,8 +18,8 @@ before_script:
   - npm install
 
 script:
-  - npm run test
   - npm run build
+  - npm run test
 
 after_success:
   - cat coverage/lcov.info | codecov
