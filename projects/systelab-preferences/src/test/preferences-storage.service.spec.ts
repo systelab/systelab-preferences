@@ -1,7 +1,4 @@
-import { PreferencesService, StorageType } from '../lib/preferences.service';
-import { SessionStorageService } from '../lib/session-storage.service';
-import { LocalStorageService } from '../lib/local-storage.service';
-import { MemoryStorageService } from '../lib/memory-storage.service';
+import { LocalStorageService, MemoryStorageService, PreferencesService, SessionStorageService, StorageType } from '../public-api';
 
 describe('Preferences Service without the TestBed', () => {
 	let services: PreferencesService[] = [];
