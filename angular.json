@@ -13,10 +13,7 @@
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
             "tsConfig": "projects/systelab-preferences/tsconfig.lib.json",
-            "project": "projects/systelab-preferences/ng-package.json",
-            "scripts": [
-              "node_modules/pako/dist/pako.min.js"
-            ]
+            "project": "projects/systelab-preferences/ng-package.json"
           },
           "configurations": {
             "production": {

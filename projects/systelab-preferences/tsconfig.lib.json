@@ -1,28 +1,23 @@
 {
+    "extends": "../../tsconfig.json",
     "compilerOptions": {
-        "target": "es5",
-        "module": "commonjs",
-        "moduleResolution": "node",
-        "sourceMap": true,
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "removeComments": false,
-        "noImplicitAny": true,
+        "outDir": "../../out-tsc/lib",
+        "target": "es2015",
         "declaration": true,
-        "outDir": "./lib",
-        "stripInternal": true,
+        "inlineSources": true,
+        "types": [],
         "lib": [
-            "es6",
-            "dom"
+            "dom",
+            "es2018"
         ]
     },
-    "include": [
-        "./build/**/*"
-    ],
-    "files": [
-        "./node_modules/@types/core-js/index.d.ts"
-    ],
     "angularCompilerOptions": {
-        "skipTemplateCodegen": true
-    }
+        "skipTemplateCodegen": true,
+        "strictMetadataEmit": true,
+        "enableResourceInlining": true
+    },
+    "exclude": [
+        "src/test.ts",
+        "**/*.spec.ts"
+    ]
 }
