@@ -14,7 +14,13 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "systelab-preferences": [
+        "dist/systelab-preferences/systelab-preferences",
+        "dist/systelab-preferences"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
