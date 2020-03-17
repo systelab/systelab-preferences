@@ -1,7 +1,7 @@
-import { MemoryStorageService } from '../app/systelab-preferences/memory-storage.service';
-import { PreferencesService, StorageType } from '../app/systelab-preferences/preferences.service';
-import { SessionStorageService } from '../app/systelab-preferences/session-storage.service';
-import { LocalStorageService } from '../app/systelab-preferences/local-storage.service';
+import { PreferencesService, StorageType } from './preferences.service';
+import { MemoryStorageService } from './memory-storage.service';
+import { SessionStorageService } from './session-storage.service';
+import { LocalStorageService } from './local-storage.service';
 
 describe('Preferences Service without the TestBed', () => {
 	let services: PreferencesService[] = [];

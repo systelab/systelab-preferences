@@ -1,0 +1,23 @@
+{
+  "name": "systelab-preferences",
+  "version": "6.0.2",
+  "license": "MIT",
+  "keywords": [
+    "Angular",
+    "Angular-cli",
+    "NPM",
+    "Systelab",
+    "Preferences"
+  ],
+  "homepage": "https://github.com/systelab/systelab-preferences.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/systelab/systelab-preferences.git"
+  },
+  "private": false,
+  "peerDependencies": {
+    "@angular/common": ">=9.0.0",
+    "@angular/core": ">=9.0.0",
+    "pako": "^1.0.6"
+  }
+}
