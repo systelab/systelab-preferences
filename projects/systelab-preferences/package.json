@@ -1,11 +1,9 @@
 {
   "name": "systelab-preferences",
-  "version": "6.0.2",
+  "version": "6.0.3",
   "license": "MIT",
   "keywords": [
     "Angular",
-    "Angular-cli",
-    "NPM",
     "Systelab",
     "Preferences"
   ],
@@ -16,8 +14,8 @@
   },
   "private": false,
   "peerDependencies": {
-    "@angular/common": ">=9.0.0",
-    "@angular/core": ">=9.0.0",
-    "pako": "^1.0.6"
+    "@angular/common": ">=9.0.0 <10.0.0",
+    "@angular/core": ">=9.0.0 <10.0.0",
+    "pako": ">=1.0.6 <2.0.0"
   }
 }

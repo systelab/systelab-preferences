@@ -26,7 +26,6 @@ after_success:
   - cat ./coverage/lcov.info | codacy-coverage
 
 before_deploy:
-  - cp README.md dist/systelab-preferences
   - cd dist/systelab-preferences
 
 deploy:

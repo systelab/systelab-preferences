@@ -5,11 +5,11 @@ export class StorageService {
 	constructor(private storage: Storage) {
 	}
 
-	public usePrefix(prefix: string) {
+	public usePrefix(prefix: string): void {
 		this.prefix = prefix;
 	}
 
-	public clear() {
+	public clear(): void {
 		this.storage.clear();
 	}
 
@@ -43,7 +43,7 @@ export class StorageService {
 		}
 	}
 
-	private parse(text: string) {
+	private parse(text: string): any {
 		try {
 			return JSON.parse(text) || null;
 		} catch (e) {
