@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build systelab-preferences --prod",
     "postbuild": "cp projects/systelab-preferences/README.md dist/systelab-preferences",
-    "test": "ng test --watch=false --browsers=ChromeHeadless",
+    "test": "ng test --watch=false --code-coverage --browsers=ChromeHeadless",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
