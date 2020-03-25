@@ -10,7 +10,7 @@ export class MemoryStorageService {
 
 	private preferences = new Map<string, Object>();
 
-	public clear() {
+	public clear(): void {
 		this.preferences.clear();
 	}
 

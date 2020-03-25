@@ -18,7 +18,7 @@ export class PreferencesService {
 	public constructor(public memoryService: MemoryStorageService, public localService: LocalStorageService, public sessionService: SessionStorageService) {
 	}
 
-	public setStorage(storage: StorageType) {
+	public setStorage(storage: StorageType): void {
 			this.storage = storage;
 	}
 
@@ -26,7 +26,7 @@ export class PreferencesService {
 		return this.storage;
 	}
 
-	public usePrefix(prefix: string) {
+	public usePrefix(prefix: string): void {
 		if (this.storage === StorageType.LOCAL_STORAGE) {
 			this.localService.usePrefix(prefix);
 		} else if (this.storage === StorageType.SESSION_STORAGE) {
@@ -36,7 +36,7 @@ export class PreferencesService {
 		}
 	}
 
-	public clear() {
+	public clear(): void {
 		if (this.storage === StorageType.IN_MEMORY_STORAGE) {
 			this.memoryService.clear();
 		} else if (this.storage === StorageType.LOCAL_STORAGE) {
@@ -112,7 +112,7 @@ export class PreferencesService {
 		}
 	}
 
-	public putFromCompressFormat(compressed: any) {
+	public putFromCompressFormat(compressed: any): void {
 		if (this.storage === StorageType.IN_MEMORY_STORAGE) {
 			this.memoryService.putFromCompressFormat(compressed);
 		}
