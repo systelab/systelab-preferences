@@ -45,7 +45,7 @@ The following steps should be consider when migrating from version 5.
 - SystelabPreferencesModule.forRoot\(\)
 - SystelabPreferencesModule
 ```
-2. When importing services and modules import them from systelab-translate root. In WebStorm, replace in path:
+2. When importing services and modules import them from systelab-preferences root. In WebStorm, replace in path:
 ```
 - from 'systelab-preferences/lib.+ 
 - from 'systelab-preferences';
