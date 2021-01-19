@@ -28,6 +28,14 @@ cd dist/systelab-preferences
 npm publish
 ```
 
+## Test
+
+### Unit
+
+```bash
+ng test
+```
+
 Library will be published at: https://www.npmjs.com/package/systelab-preferences
 
 ## Documentation
@@ -50,3 +58,7 @@ The following steps should be consider when migrating from version 5.
 - from 'systelab-preferences/lib.+ 
 - from 'systelab-preferences';
 ```
+
+## Version 11
+
+Minor changes that do not affect
