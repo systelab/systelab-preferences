@@ -33,18 +33,16 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/systelab-preferences/tsconfig.lib.json",
-              "projects/systelab-preferences/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "projects/systelab-preferences/**/*.ts",
+              "projects/systelab-preferences/**/*.html"
             ]
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "systelab-preferences"
 }
