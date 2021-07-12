@@ -51,17 +51,12 @@ export class MemoryStorageService {
 		});
 	}
 
-	public getInCompressFormat(): any {
-		const passToServer: any = {};
-		this.preferences.forEach((value: Object, key: string) => {
-			passToServer[key] = value;
-		});
-
-		const binaryString = compressor.deflate(JSON.stringify(passToServer), {to: 'string'});
+	public getInCompressFormat(): string {
+		const binaryString = compressor.deflate(this.getInStringFormat(), {to: 'string'});
 		return btoa(binaryString);
 	}
 
-	public getInStringFormat(): any {
+	public getInStringFormat(): string {
 		const passToServer: any = {};
 		this.preferences.forEach((value, key) => passToServer[key] = value);
 		return JSON.stringify(passToServer);

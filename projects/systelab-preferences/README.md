@@ -34,20 +34,20 @@ public removeEndsWith(endsWith: string): void
 Additionaly for the MemoryStorageService, you can use these two methods to get/put all the preferences in a compress format in order to store them in your backend.
 
 ```typescript
-public getInCompressFormat(): any
+public getInCompressFormat(): string
 public putFromCompressFormat(compressed: any)
 ```
 
 Finally, for the SessionStorageService and LocalStorageService you are able to setup a prefix for the keys that you will store. If not set, Systelab will be used as a default. Remember that a dot (.) will be added after the prefix. To setup the prefix use:
 
 ```typescript
-usePrefix(prefix: string) 
+usePrefix(prefix: string)
 ```
 
 PreferencesService is a convenient service to access any individual storage. In order to do that, set the storage using the method:
 
 ```typescript
-setStorage(storage: number): any 
+setStorage(storage: number): any
 ```
 
 There are three constants to set the storage:

@@ -96,7 +96,7 @@ export class PreferencesService {
 		}
 	}
 
-	public getInStringFormat(): any {
+	public getInStringFormat(): string {
 		if (this.storage === StorageType.IN_MEMORY_STORAGE) {
 			return this.memoryService.getInStringFormat();
 		} else {
