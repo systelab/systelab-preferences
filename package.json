@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^13.0.2",
+    "@angular-devkit/build-ng-packagr": "^0.1002.0",
     "@angular-eslint/builder": "^12.6.1",
     "@angular-eslint/eslint-plugin": "^12.6.1",
     "@angular-eslint/eslint-plugin-template": "^12.6.1",
