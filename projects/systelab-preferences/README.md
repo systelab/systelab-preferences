@@ -1,4 +1,4 @@
-# systelab-preferences
+cd..# systelab-preferences
 
 Library to manage your application preferences.
 
@@ -61,3 +61,12 @@ PreferencesService.SESSION_STORAGE
 By default, PreferencesService.IN_MEMORY_STORAGE will be used.
 
 The behaviour of each method is the expected for the selected storage type.
+
+## Crosscutting
+It is also included on this library some crosscutting utilities:
+
+| Crosscutting | Description |
+| ------------ | ----------- |
+| [emailValidator](src/lib/crosscutting/validators) | Validates input emails on forms |
+| [phoneValidator](src/lib/crosscutting/validators) | Validates input phone on forms |
+| [urlValidator](src/lib/crosscutting/validators) | Validates input url on forms |
