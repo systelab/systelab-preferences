@@ -3,16 +3,16 @@ import { EmailValidatorDirective } from './crosscutting/validators/email-validat
 import { PhoneValidatorDirective } from './crosscutting/validators/phone-validator.directive';
 import { UrlValidatorDirective } from './crosscutting/validators/url-validator.directive';
 
-@NgModule({    
+@NgModule({
     declarations: [
         EmailValidatorDirective,
         PhoneValidatorDirective,
-        UrlValidatorDirective        	  
+        UrlValidatorDirective
     ],
     exports: [
         EmailValidatorDirective,
         PhoneValidatorDirective,
-        UrlValidatorDirective,	  
+        UrlValidatorDirective,
     ]
   })
 export class SystelabPreferencesModule {

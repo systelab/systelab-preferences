@@ -5,8 +5,7 @@ describe('Url validation', () => {
 	beforeEach(() => {
 	});
 
-	[	
-		'plainUrl',
+	[	'plainUrl',
 		'https://myDomain.com',
 		'http://myDomain.cat',
 		'https://www.myDomain.com',
@@ -43,8 +42,8 @@ describe('Url validation', () => {
 	].forEach((url) => {
 		it('Check that ' + url + ' is not valid', () => {
 			expect(urlValidator(new FormControl(url))).toEqual({
-				'url': url
+				url
 			  });
 		});
-	});	
+	});
 });

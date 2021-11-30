@@ -5,8 +5,7 @@ describe('Email validation', () => {
 	beforeEach(() => {
 	});
 
-	[	
-		'valid@email.com',
+	[	'valid@email.com',
 		'valid@email.c',
 		'v@email.com',
 		'valid@l.com',
@@ -42,9 +41,7 @@ describe('Email validation', () => {
 		'email@example..com',
 	].forEach((email) => {
 		it('Check that ' + email + ' is not valid', () => {
-			expect(emailValidator(new FormControl(email))).toEqual({
-				'email': email
-			  });
+			expect(emailValidator(new FormControl(email))).toEqual({email});
 		});
 	});
 });
