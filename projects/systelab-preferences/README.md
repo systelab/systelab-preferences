@@ -1,4 +1,4 @@
-cd..# systelab-preferences
+# systelab-preferences
 
 Library to manage your application preferences.
 
