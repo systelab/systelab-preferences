@@ -42,7 +42,7 @@ export class PreferencesService {
 		} else if (this.storage === StorageType.SESSION_STORAGE) {
 			return this.sessionService.getPrefix();
 		} else {
-			console.error('You can not set a prefix for In-memory preferences');
+			return undefined;
 		}
 	}
 
