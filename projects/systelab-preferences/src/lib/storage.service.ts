@@ -9,6 +9,10 @@ export class StorageService {
 		this.prefix = prefix;
 	}
 
+	public getPrefix(): string {
+		return this.prefix;
+	}
+
 	public clear(): void {
 		this.storage.clear();
 	}

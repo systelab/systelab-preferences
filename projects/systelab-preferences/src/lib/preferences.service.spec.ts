@@ -126,4 +126,13 @@ describe('Preferences Service without the TestBed', () => {
 				.toBe('Hello!');
 		});
 	});
+
+	it('Check that prefix is correctly set', () => {
+		services.filter((service) => service.getStorage() !== StorageType.IN_MEMORY_STORAGE)
+			.forEach((service) => {
+				service.usePrefix('CSW');
+				expect(service.getPrefix())
+					.toBe('CSW')
+			})
+	});
 });

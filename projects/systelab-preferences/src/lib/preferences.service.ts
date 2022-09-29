@@ -36,6 +36,16 @@ export class PreferencesService {
 		}
 	}
 
+	public getPrefix(): string {
+		if (this.storage === StorageType.LOCAL_STORAGE) {
+			return this.localService.getPrefix();
+		} else if (this.storage === StorageType.SESSION_STORAGE) {
+			return this.sessionService.getPrefix();
+		} else {
+			console.error('You can not set a prefix for In-memory preferences');
+		}
+	}
+
 	public clear(): void {
 		if (this.storage === StorageType.IN_MEMORY_STORAGE) {
 			this.memoryService.clear();
