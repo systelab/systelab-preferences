@@ -132,11 +132,11 @@ describe('Preferences Service without the TestBed', () => {
 			if (service.getStorage() !== StorageType.IN_MEMORY_STORAGE) {
 				service.usePrefix('CSW');
 				expect(service.getPrefix())
-					.toBe('CSW')
+					.toBe('CSW');
 			} else {
 				expect(service.getPrefix())
 					.toBe(undefined);
 			}
-		})
+		});
 	});
 });
