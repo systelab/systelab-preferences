@@ -17,7 +17,7 @@ before_script:
   - npm install -g makeshift && makeshift -s @systelab-tecnologies -r https://registry.npmjs.org
   - npm install -g codecov
   - npm install -g codacy-coverage
-  - npm install
+  - npm ci
 
 script:
   - npm run test
