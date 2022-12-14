@@ -63,14 +63,14 @@ The following steps should be consider when migrating from version 5.
 
 [Angular 15 news](https://blog.angular.io/angular-v15-is-now-available-df7be7f2f4c8)
 
-  - Router and HttpClient tree-shakable standalone APIs
-  - Directive composition API
-  - Image directive is now stable
-  - Functional router guards
-  - Router unwraps default imports
-  - Better stack traces
-  - Release MDC-based components to stable
-  - Improvements in the experimental esbuild support
+-  Router and HttpClient tree-shakable standalone APIs
+-  Directive composition API
+-  Image directive is now stable
+-  Functional router guards
+-  Router unwraps default imports
+-  Better stack traces
+-  Release MDC-based components to stable
+-  Improvements in the experimental esbuild support
 
 
 ## Version 14.x.x - Angular 14
