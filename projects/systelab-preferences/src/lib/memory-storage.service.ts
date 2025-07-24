@@ -52,7 +52,8 @@ export class MemoryStorageService {
 	}
 
 	public getInCompressFormat(): string {
-		const binaryString = compressor.deflate(this.getInStringFormat(), {to: 'string'});
+		const compressed = compressor.deflate(this.getInStringFormat()); // Uint8Array
+		const binaryString = String.fromCharCode(...compressed);
 		return btoa(binaryString);
 	}
 
@@ -66,10 +67,11 @@ export class MemoryStorageService {
 		this.clear();
 		// Do your best
 		try {
-			const result = compressor.inflate(atob(compressed), {to: 'string'});
+			const binaryString = atob(compressed);
+			const byteArray = Uint8Array.from(binaryString, c => c.charCodeAt(0));
+			const result = compressor.inflate(byteArray, { to: 'string' });
 			const parsed = JSON.parse(result);
-			Object.keys(parsed)
-				.forEach(key => this.preferences.set(key, parsed[key]));
+			Object.keys(parsed).forEach(key => this.preferences.set(key, parsed[key]));
 		} catch (ex) {
 		}
 	}

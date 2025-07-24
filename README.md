@@ -44,20 +44,70 @@ Read the [provided documentation](https://github.com/systelab/systelab-preferenc
 
 # Breaking changes
 
-## Version 6
-Few changes where introduce in version 6 in order to standardize the library and support Angular 9.
-The following steps should be consider when migrating from version 5.
+## Version 20.x.x - Angular 20
 
-1. When importing the module do not use .forRoot(); In WebStorm, replace in path:
-```
-- SystelabPreferencesModule.forRoot\(\)
-- SystelabPreferencesModule
-```
-2. When importing services and modules import them from systelab-preferences root. In WebStorm, replace in path:
-```
-- from 'systelab-preferences/lib.+
-- from 'systelab-preferences';
-```
+[Angular 20 news](https://blog.angular.dev/announcing-angular-v20-b5c9c06cf301)
+
+- Stabilizing APIs such as effect, linkedSignal, toSignal, incremental hydration, route-level render mode config and promoting zoneless to developer preview
+- Improved debugging with Angular DevTools and partnering with Chrome for custom Angular reporting directly in Chrome DevTools
+- Polishing developer experience with style guide updates.
+- Advancements in GenAI development with llms.txt and angular.dev guides and videos for building Generative AI applications
+- Launching a request for comments for an official mascot for Angular
+
+## Version 19.x.x - Angular 19
+
+[Angular 19 news](https://blog.angular.dev/meet-angular-v19-7b29dfd05b84)
+
+-   SSR improvements
+-   Enhanced Reactivity (resource, linkedSignal, renderEffect)
+-   Standalone by default
+-   Zoneless support
+-   Developer Experience Improvements (new material components like as time picker, HMR styles, detection of unused imports)
+-   New Reactive handler for HTTP requests (httpResource and rxResource)
+
+## Version 18.x.x - Angular 18
+
+[Angular 18 news](https://blog.angular.dev/angular-v18-is-now-available-e79d5ac0affe)
+
+-   Experimental zoneless support
+-   Material 3 deferrable views
+-   SSR improvements
+-   Deferrable views are now stable
+-   Control flow is stable
+
+## Version 17.x.x - Angular 17
+
+[Angular 17 news](https://blog.angular.dev/introducing-angular-v17-4d7033312e4b)
+
+-   Deferrable views
+-   Faster runtime
+-   Faster builds
+-   Built-in control flow
+-   New lifecycle hooks ( afterRender and afterNextRender )
+-   Default Vite + esbuild for new projects
+-   Signals
+
+## Version 16.x.x - Angular 16
+
+-   Datepicker has been ranamed to DatepickerComponent
+
+[Angular 16 news](https://blog.angular.io/angular-v16-is-here-4d7a28ec680d)
+
+-   Angular Signals
+-   RxJS interoperability
+-   Server-side rendering and hydration
+-   Improved tooling for standalone components, directives and pipes
+-   Advancing developer tooling
+-   Autocomplete imports in templates
+
+## Version 15.3.x - Interface-based configuration
+
+- Rebump of the library based on a totally new `systelab-chart` component:
+    - Interface based on a single @Input field with a typed configuration object
+    - Used ChartJS typings to minimize implementation errors
+    - Splitted implementation into several 'single-responsible' services
+- Kept old component, but renamed to `systelab-chart-legacy` and marked as "deprecated"
+- Updated showcase to show charts generated with both components, new and legacy
 
 ## Version 15.x.x - Angular 15
 
@@ -113,3 +163,18 @@ Added --noImplicitOverride flag to allow override methods and get error for unin
 ## Version 8.x.x - Angular 11
 
 Minor changes that do not affect
+
+## Version 6
+Few changes where introduce in version 6 in order to standardize the library and support Angular 9.
+The following steps should be consider when migrating from version 5.
+
+1. When importing the module do not use .forRoot(); In WebStorm, replace in path:
+```
+- SystelabPreferencesModule.forRoot\(\)
+- SystelabPreferencesModule
+```
+2. When importing services and modules import them from systelab-preferences root. In WebStorm, replace in path:
+```
+- from 'systelab-preferences/lib.+
+- from 'systelab-preferences';
+```
