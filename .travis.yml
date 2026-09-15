@@ -16,7 +16,7 @@ before_install:
   - npm --version
 
 before_script:
-  - npm install -g makeshift && makeshift -s @systelab-tecnologies -r https://registry.npmjs.org
+  - npm install -g makeshift && makeshift -s @systelab-technologies -r https://registry.npmjs.org
   - npm install -g codecov
   - npm install -g codacy-coverage
   - npm ci
@@ -28,14 +28,3 @@ script:
 after_success:
   - cat coverage/lcov.info | codecov
   - cat ./coverage/lcov.info | codacy-coverage
-
-before_deploy:
-  - cd dist/systelab-preferences
-
-deploy:
-  skip_cleanup: true
-  provider: npm
-  email: aserra@werfen.com
-  api_key: $NPM_TOKEN
-  on:
-    tags: true
