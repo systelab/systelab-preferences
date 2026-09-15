@@ -1,0 +1,38 @@
+name: Publish to npm
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Download code
+        uses: actions/checkout@v4
+
+      - name: Configure Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.17.0'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Update npm (Required by OIDC)
+        run: npm install -g npm@11.5.1
+
+      - name: Config and install dependencies
+        run: |
+          npm install -g makeshift && makeshift -s @systelab-technologies -r https://registry.npmjs.org
+          npm ci
+
+      - name: Build the library
+        run: npm run build
+
+      - name: Publish to npm
+        working-directory: ./dist/systelab-preferences
+        run: npm publish --provenance
